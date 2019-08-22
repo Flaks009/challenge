@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Twitter</h1>
+
+<% @profiles %>
+<% @profiles.each do |p| %>
+    <tr>
+        <td><%= p.name %></td><br>
+        <td><%= p.bio %></td><br>
+        <td><%= p.link %></td><br>
+        <td><%= p.id %></td><br>
+    </tr>
+<% end %>
+<br>
