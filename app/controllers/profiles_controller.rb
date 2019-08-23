@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
 
   def index
     @profiles = if params[:term]
-                  Profile.where('name ILIKE ?', "%#{params[:term]}%")
+                  Profile.where('name ILIKE ?', "%#{params[:term]}%").or(Profile.where('bio ILIKE ?', "%#{params[:term]}%"))
                 else
                   @profiles = Profile.all
     end

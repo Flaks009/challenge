@@ -9681,3 +9681,177 @@ Processing by ProfilesController#scrapping as HTML
 Completed 200 OK in 51ms (Views: 50.0ms | ActiveRecord: 0.0ms | Allocations: 10412)
 
 
+Started GET "/" for 172.22.0.1 at 2019-08-23 18:44:59 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProfilesController#scrapping as HTML
+  Rendering profiles/scrapping.html.erb within layouts/application
+  Rendered profiles/scrapping.html.erb within layouts/application (Duration: 2.1ms | Allocations: 617)
+Completed 200 OK in 274ms (Views: 266.2ms | ActiveRecord: 0.0ms | Allocations: 299974)
+
+
+Started GET "/profiles?term=pla&commit=Procurar" for 172.22.0.1 at 2019-08-23 18:45:04 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfilesController#index as HTML
+  Parameters: {"term"=>"pla", "commit"=>"Procurar"}
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE (* ILIKE '%pla%')[0m
+  ↳ app/views/profiles/index.html.erb:13
+  Rendered profiles/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 3002)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.0ms | Allocations: 3989)
+
+
+  
+ActionView::Template::Error (PG::SyntaxError: ERROR:  syntax error at or near "*"
+LINE 1: SELECT "profiles".* FROM "profiles" WHERE (* ILIKE '%pla%')
+                                                   ^
+):
+    10:         </tr>
+    11:     </thead>
+    12:     <tbody>
+    13:         <% @profiles.each do |profile| %>
+    14:         <tr>
+    15:             <td><%= profile.name %></td>
+    16:             <td><%= profile.bio %></td>
+  
+app/views/profiles/index.html.erb:13
+Started GET "/" for 172.22.0.1 at 2019-08-23 18:48:35 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfilesController#scrapping as HTML
+  Rendering profiles/scrapping.html.erb within layouts/application
+  Rendered profiles/scrapping.html.erb within layouts/application (Duration: 0.4ms | Allocations: 138)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 10574)
+
+
+Started GET "/profiles?term=PLA&commit=Procurar" for 172.22.0.1 at 2019-08-23 18:48:38 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfilesController#index as HTML
+  Parameters: {"term"=>"PLA", "commit"=>"Procurar"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1026)
+
+
+  
+ActiveRecord::PreparedStatementInvalid (wrong number of bind variables (3 for 1) in: name ILIKE ?):
+  
+app/controllers/profiles_controller.rb:32:in `index'
+Started GET "/profiles?term=PLA&commit=Procurar" for 172.22.0.1 at 2019-08-23 18:50:01 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfilesController#index as HTML
+  Parameters: {"term"=>"PLA", "commit"=>"Procurar"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 630)
+
+
+  
+ActiveRecord::PreparedStatementInvalid (wrong number of bind variables (3 for 1) in: name ILIKE ?):
+  
+app/controllers/profiles_controller.rb:32:in `index'
+Started GET "/" for 172.22.0.1 at 2019-08-23 18:50:07 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfilesController#scrapping as HTML
+  Rendering profiles/scrapping.html.erb within layouts/application
+  Rendered profiles/scrapping.html.erb within layouts/application (Duration: 0.4ms | Allocations: 130)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.0ms | Allocations: 10339)
+
+
+Started GET "/profiles?term=pla&commit=Procurar" for 172.22.0.1 at 2019-08-23 18:50:09 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfilesController#index as HTML
+  Parameters: {"term"=>"pla", "commit"=>"Procurar"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 628)
+
+
+  
+ActiveRecord::PreparedStatementInvalid (wrong number of bind variables (3 for 1) in: name ILIKE ?):
+  
+app/controllers/profiles_controller.rb:32:in `index'
+Started GET "/profiles?term=pla&commit=Procurar" for 172.22.0.1 at 2019-08-23 18:50:16 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfilesController#index as HTML
+  Parameters: {"term"=>"pla", "commit"=>"Procurar"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 951)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/controllers/profiles_controller.rb:32:in `index'
+Started GET "/profiles?term=pla&commit=Procurar" for 172.22.0.1 at 2019-08-23 18:50:55 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+SyntaxError (/challenge-fretadao/app/controllers/profiles_controller.rb:32: syntax error, unexpected ',', expecting ')'
+... Profile.where(('name ILIKE ?', "%#{params[:term]}%").or('bi...
+...                              ^):
+  
+app/controllers/profiles_controller.rb:32: syntax error, unexpected ',', expecting ')'
+app/controllers/profiles_controller.rb:32: syntax error, unexpected ',', expecting ')'
+app/controllers/profiles_controller.rb:32: syntax error, unexpected ',', expecting ')'
+Started GET "/profiles?term=pla&commit=Procurar" for 172.22.0.1 at 2019-08-23 18:52:00 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfilesController#index as HTML
+  Parameters: {"term"=>"pla", "commit"=>"Procurar"}
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (83.0ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE (name ILIKE '%pla%')[0m
+  ↳ app/views/profiles/index.html.erb:13
+  Rendered profiles/index.html.erb within layouts/application (Duration: 95.2ms | Allocations: 4912)
+Completed 200 OK in 108ms (Views: 17.4ms | ActiveRecord: 88.1ms | Allocations: 15711)
+
+
+Started GET "/" for 172.22.0.1 at 2019-08-23 18:52:04 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfilesController#scrapping as HTML
+  Rendering profiles/scrapping.html.erb within layouts/application
+  Rendered profiles/scrapping.html.erb within layouts/application (Duration: 0.4ms | Allocations: 131)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.0ms | Allocations: 10336)
+
+
+Started GET "/profiles?term=pla&commit=Procurar" for 172.22.0.1 at 2019-08-23 18:53:26 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfilesController#index as HTML
+  Parameters: {"term"=>"pla", "commit"=>"Procurar"}
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE ((name ILIKE '%pla%') OR (bio ILIKE '%pla%'))[0m
+  ↳ app/views/profiles/index.html.erb:13
+  Rendered profiles/index.html.erb within layouts/application (Duration: 12.0ms | Allocations: 4487)
+Completed 200 OK in 29ms (Views: 21.1ms | ActiveRecord: 5.1ms | Allocations: 15362)
+
+
+Started GET "/profiles" for 172.22.0.1 at 2019-08-23 18:53:31 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:13
+  Rendered profiles/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1297)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.6ms | Allocations: 11535)
+
+
+Started GET "/profiles?term=all&commit=Procurar" for 172.22.0.1 at 2019-08-23 18:53:36 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfilesController#index as HTML
+  Parameters: {"term"=>"all", "commit"=>"Procurar"}
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE ((name ILIKE '%all%') OR (bio ILIKE '%all%'))[0m
+  ↳ app/views/profiles/index.html.erb:13
+  Rendered profiles/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 804)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.6ms | Allocations: 11132)
+
+
+Started GET "/profiles?term=off&commit=Procurar" for 172.22.0.1 at 2019-08-23 18:53:39 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfilesController#index as HTML
+  Parameters: {"term"=>"off", "commit"=>"Procurar"}
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE ((name ILIKE '%off%') OR (bio ILIKE '%off%'))[0m
+  ↳ app/views/profiles/index.html.erb:13
+  Rendered profiles/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 805)
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.7ms | Allocations: 11132)
+
+
+Started GET "/" for 172.22.0.1 at 2019-08-23 18:53:42 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfilesController#scrapping as HTML
+  Rendering profiles/scrapping.html.erb within layouts/application
+  Rendered profiles/scrapping.html.erb within layouts/application (Duration: 0.4ms | Allocations: 131)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 10337)
+
+
