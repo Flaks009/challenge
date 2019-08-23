@@ -1,16 +1,31 @@
-<h1>New Profile</h1>
+<div class="container h-100 mt-5">
+    <div class="row align-items-center h-100">
+        <div class="col-6 mx-auto">
+            <div class="jumbotron">
+                <div class="container mb-5">
+                    <h1>Insert a @</h1>
 
-<% if @doc %>
-<%= @name %>
-<%= @bio %>
-<%= @link %>
-<% end %>
-
-
-<%= form_tag(root_path, :method => "get") do %> 
-<%= label_tag(:name, "Search for:") %> 
-<%= text_field_tag(:name) %> 
-<%= submit_tag("Search") %> 
-<% end %>
-
-<%= render 'form', profile: @profile%>
+                    <%= form_tag(root_path, :method => "get") do %>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                        </div>
+                        <%= text_field_tag 'name', nil, class:"form-control", required: true %>
+                    </div>
+                    <%= submit_tag("Search", class:"float-right btn btn-primary btn-sm mt-2") %>
+                    <% end %>
+                    <%if @doc%>
+                    <%= render 'form', profile: @profile%>
+                    <% end %>
+                </div>
+                <div class="container mt-5">
+                    <% if @doc %>
+                    <p class="lead">User: <%= @name %></p>
+                    <p class="lead">Bio: <%= @bio %></p>
+                    <p class="lead">Link: <%= @link %></p>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

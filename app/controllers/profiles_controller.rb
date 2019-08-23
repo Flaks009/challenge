@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :set_profile, only: [:show, :destroy]
   def scrapping
       @name = params[:name]
       if @name
@@ -28,21 +28,18 @@ class ProfilesController < ApplicationController
   end
 
   def index
-      @profiles = Profile.all
-  end
-
-
-  def update
-    respond_to do |format|
-      if @profile.update(profile_params)
-        format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
+      @profiles = if params[:term]
+        Profile.where('name ILIKE ?', "%#{params[:term]}%")
       else
-        format.html { render :edit }
+        @profiles = Profile.all
       end
-    end
   end
 
-  def show
+  def destroy
+    respond_to do |format|
+        @profile.destroy
+        format.html { redirect_to profiles_url, notice: 'Profile was successfully destroyed.' }
+    end
   end
 
 
@@ -53,6 +50,6 @@ class ProfilesController < ApplicationController
 
 
     def profile_params
-        params.require(:profile).permit(:name, :link, :bio)
+        params.require(:profile).permit(:name, :link, :bio, :term)
     end
 end

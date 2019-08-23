@@ -1,14 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Twitter</h1>
-
-<% @profiles %>
-<% @profiles.each do |p| %>
-    <tr>
-        <td><%= p.name %></td><br>
-        <td><%= p.bio %></td><br>
-        <td><%= p.link %></td><br>
-        <td><%= p.id %></td><br>
-    </tr>
-<% end %>
-<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Bio</th>
+            <th scope="col">Link</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @profiles.each do |profile| %>
+        <tr>
+            <td><%= profile.name %></td>
+            <td><%= profile.bio %></td>
+            <td><a href="<%=profile.link%>"><button class="btn btn-dark">Go to page!</button></a></td>
+            <td><%= button_to 'Exclude', profile,  method: :delete , data: { confirm: 'Are you sure?' }, class: "btn btn-dark" %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
