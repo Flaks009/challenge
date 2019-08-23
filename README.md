@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Aplicação em rails que faz o proposto pelo desafio. Decidi optar por rails, para aprender mais sobre ruby e rails e durante o processo aprendi coisas legais colocando a mão na massa.
 
-Things you may want to cover:
+Aplicação funciona via docker ou via rails nativo do sistema.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Para executar através do docker, utilizar o comando docker-compose up
